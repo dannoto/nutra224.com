@@ -1,0 +1,174 @@
+{
+  "$ref": "#/definitions/products",
+  "definitions": {
+    "products": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "mainTitle": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "pubDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "updatedDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "image": {
+          "type": "string"
+        },
+        "background": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string",
+          "default": "Admin"
+        },
+        "category": {
+          "type": "string",
+          "default": "Saúde"
+        },
+        "categoryColor": {
+          "type": "string",
+          "default": "green"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reviews": {
+          "type": "object",
+          "properties": {
+            "count": {
+              "type": "number",
+              "default": 0
+            },
+            "rating": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5,
+              "default": 4.5
+            }
+          },
+          "additionalProperties": false,
+          "default": {
+            "count": 0,
+            "rating": 4.5
+          }
+        },
+        "canonical": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string",
+          "default": "en_US"
+        },
+        "ogType": {
+          "type": "string",
+          "default": "article"
+        },
+        "ogImageWidth": {
+          "type": "number",
+          "default": 1200
+        },
+        "ogImageHeight": {
+          "type": "number",
+          "default": 630
+        },
+        "ogImageType": {
+          "type": "string",
+          "default": "image/webp"
+        },
+        "twitterCard": {
+          "type": "string",
+          "default": "summary_large_image"
+        },
+        "twitterSite": {
+          "type": "string",
+          "default": "@nutra24"
+        },
+        "twitterCreator": {
+          "type": "string",
+          "default": "@nutra24"
+        },
+        "manufactured": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "delivery": {
+          "type": "string"
+        },
+        "shipping": {
+          "type": "string"
+        },
+        "guarantee": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string",
+          "default": "in stock"
+        },
+        "currency": {
+          "type": "string",
+          "default": "USD"
+        },
+        "affiliateLink": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "mainTitle",
+        "title",
+        "description",
+        "pubDate"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
